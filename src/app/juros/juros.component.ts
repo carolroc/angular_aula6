@@ -25,4 +25,16 @@ export class JurosComponent implements OnInit {
   getJurosComp() {
     return this.vp * Math.pow(1 + this.j, this.n);
   }
+
+  totalJuros(n: number) {
+    return this.vp * Math.pow(1 + this.j / 100, n);
+  }
+
+  periodoParcelas() {
+    let parcelas: Number[] = [];
+    for (let i = 1; i <= this.n; i++) {
+      parcelas.push(this.totalJuros(i));
+    }
+    return parcelas;
+  }
 }

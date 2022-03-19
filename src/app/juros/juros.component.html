@@ -13,3 +13,20 @@
 
 <h3>valor composto:</h3>
 <h4>R$ {{ getJurosComp() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Simulação para {{ n }} meses</th>
+      <th>Simples</th>
+      <th>Composto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pc of periodoParcelas()">
+      <td>{{ pc }}</td>
+      <td>{{ getJuros() }}</td>
+      <td>{{ getJurosComp() }}</td>
+    </tr>
+  </tbody>
+</table>
